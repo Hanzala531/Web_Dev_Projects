@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    padding: 20px ,40px;
+
+}
+
+.home ul{
+    display: inline-block; 
+} 
+
+.home ul li{
+    list-style: none;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    gap: 10px;
+}
+
+.left-part{
+    width: 25vw;
+}
+
+.right-part{
+    width:  75vw;
+}
+.footer  a{
+    text-decoration: none;
+    color: grey;
+}
+
+/* .footer{
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 3px; */
+    gap: 10px;
+/* } */
+
+f
+.library{}
