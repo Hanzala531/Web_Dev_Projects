@@ -72,9 +72,13 @@ body{
     background-color: #212121;
     color: white;
     margin: 10px  0px;
-    
+    max-height: 100vh;
+    overflow-y: scroll;    
 }
 
+.right-part::-webkit-scrollbar{
+    display: none;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -85,4 +89,33 @@ body{
 
 .header > *{
     padding: 4px;
+}
+
+.playlists .card{
+    width: 150px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+    height: 180px;
+}
+
+
+.card{
+    display: flex;
+    flex-wrap: wrap;    
+    background-color: #252525;
+    padding: 10px;
+}
+
+.card > *{
+    padding-top: 3px;
+}
+
+.allCards{
+    display: flex; 
+    flex-wrap: wrap;
+    padding-top: 10px;
+    gap: 8px;
 }
