@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
 }
+
 .container{
     display: flex;
     gap: 4px;
     background-color: black;
+    height: 100vh;
 }
 
 .left-part{
@@ -53,7 +55,7 @@ body{
 
 
 .library{
-    min-height: 78vh;
+    min-height: 75vh;
     position: relative;
     padding: 20px ,40px;
     font-size: small;
@@ -73,7 +75,8 @@ body{
     color: white;
     margin: 10px  0px;
     max-height: 100vh;
-    overflow-y: scroll;    
+    overflow-y: scroll;
+    position: relative;    
 }
 
 .right-part::-webkit-scrollbar{
@@ -91,7 +94,7 @@ body{
     padding: 4px;
 }
 
-.playlists .card{
+.spotifyPlaylists .card{
     width: 150px;
 }
 
@@ -107,6 +110,9 @@ body{
     flex-wrap: wrap;    
     background-color: #252525;
     padding: 10px;
+    position: relative;
+
+
 }
 
 .card > *{
@@ -119,3 +125,81 @@ body{
     padding-top: 10px;
     gap: 8px;
 }
+
+.play-button {
+    position: absolute;
+    top: 55%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 30px; /* Adjust the size as needed */
+    color: #162d33;
+    background-color: #1ed760;
+    padding: 5px 10px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+.card:hover .play-button {
+    display: block;
+}
+
+
+.audioList{
+    margin: 10px;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.audioList::-webkit-scrollbar{
+    display: none;
+}
+
+.audioList ul{
+    padding: 0px 12px;
+}
+
+.audioList ul li{
+    list-style: decimal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ffffff;
+    margin: 4px 10px;
+    padding: 5px;
+}
+
+.playBar{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #e2d9d9;
+    width: 70vw;
+    margin: 0 20px;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 5vh;
+    gap: 10px;
+    border-radius: 100px;
+    filter: invert(1);
+}
+
+.seekbar{
+    position: fixed;
+    bottom: 0;
+    height: 2px;
+    width: 67vw;
+    border: 2px solid rgb(0, 162, 255);
+    background-color: rgb(0, 162, 255);
+}
+
+.circle{
+    height: 13px;
+    width: 13px;
+    border-radius: 30px;
+    background-color: black;
+    position: relative;
+    bottom: 5px;
+    right: 2px;
+    transition: left 0.5s;
+}    

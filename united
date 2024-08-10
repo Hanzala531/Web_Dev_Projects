@@ -1,0 +1,5 @@
+<div class="audioFiles">
+    <img class="invert" src="Audio.svg" alt="Audio Icon">
+    <span>${element}</span>
+    <img class="invert" src="play.svg" alt="Play Icon">
+  </div>
