@@ -28,4 +28,6 @@
     margin: 10px ;
 }
 
-
+.pointer{
+    cursor: pointer;
+}

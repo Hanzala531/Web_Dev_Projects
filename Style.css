@@ -20,6 +20,10 @@ body{
     border-color: black;
 }
 
+.logo img{
+    padding: 0;
+}
+
 .home{
     padding: 20px ,40px;
 
@@ -55,7 +59,7 @@ body{
 
 
 .library{
-    min-height: 75vh;
+    min-height: 71.4vh;
     position: relative;
     padding: 20px ,40px;
     font-size: small;
@@ -94,6 +98,12 @@ body{
     padding: 4px;
 }
 
+
+.spotifyPlaylists > h1{
+    margin-left: 4px;
+    font-weight:600;
+    font-size: 30px;
+}
 .spotifyPlaylists .card{
     width: 150px;
 }
@@ -108,7 +118,7 @@ body{
 .card{
     display: flex;
     flex-wrap: wrap;    
-    background-color: #252525;
+    background-color: #181818;
     padding: 10px;
     position: relative;
 
@@ -147,7 +157,7 @@ body{
 
 .audioList{
     margin: 10px;
-    height: 350px;
+    height: 300px;
     overflow-y: scroll;
 }
 
@@ -176,7 +186,7 @@ body{
     background-color: #e2d9d9;
     width: 70vw;
     margin: 0 20px;
-    padding: 5px 0;
+    padding: 4px 0;
     position: fixed;
     bottom: 5vh;
     gap: 10px;
@@ -184,22 +194,32 @@ body{
     filter: invert(1);
 }
 
-.seekbar{
+
+.seekbar {
     position: fixed;
-    bottom: 0;
+    bottom: -5px;
     height: 2px;
     width: 67vw;
     border: 2px solid rgb(0, 162, 255);
     background-color: rgb(0, 162, 255);
+    padding: 0;
 }
 
-.circle{
+.circle {
     height: 13px;
     width: 13px;
-    border-radius: 30px;
+    border-radius: 50%;
     background-color: black;
-    position: relative;
-    bottom: 5px;
-    right: 2px;
+    position: absolute;
+    left: 0%;  /* Start at the left edge */
+    bottom: 50%; /* Position in the middle of the seekbar */
+    transform: translate(-50%, 50%); /* Center the circle horizontally and vertically */
     transition: left 0.5s;
-}    
+}
+
+@media (max-width: 1200px) {
+
+    .left-part{
+        border: 2px solid red;
+    }
+  }
