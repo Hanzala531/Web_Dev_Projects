@@ -15,7 +15,7 @@ function convertSecondsToMinutes(seconds) {
 }
 
 async function getAudios(folder) {
-  let a = await fetch(`./${folder}/`);
+  let a = await fetch(`/${folder}/`);
   currentFolder = folder;
   let response = await a.text();
   let div = document.createElement("div");
@@ -70,7 +70,7 @@ async function DisplayAlbums() {
     const e = array[i];
     if (e.href.includes("/AudioFiles")) {
       let folder = e.href.split("/").slice(-2)[0];
-      let a = await fetch(`./AudioFiles/${folder}/info.json`);
+      let a = await fetch(`/AudioFiles/${folder}/info.json`);
       let response = await a.json();
       cardContainer.innerHTML += `<div class="card" data-folder="${response.data}">
             <div class="play-button">▶</div>
@@ -126,7 +126,7 @@ async function main() {
     let currentAudioFileName = currentAudio.src.split("/").pop().replaceAll("%20", " ");
     let index = Audios.indexOf(currentAudioFileName);
     if (index > 0) {
-      currentAudio.src = `./${currentFolder}/` + Audios[index - 1];
+      currentAudio.src = `/${currentFolder}/` + Audios[index - 1];
       currentAudio.play();
     }
   });
@@ -135,7 +135,7 @@ async function main() {
     let currentAudioFileName = currentAudio.src.split("/").pop().replaceAll("%20", " ");
     let index = Audios.indexOf(currentAudioFileName);
     if (index < Audios.length - 1) {
-      currentAudio.src = `./${currentFolder}/` + Audios[index + 1];
+      currentAudio.src = `/${currentFolder}/` + Audios[index + 1];
       currentAudio.play();
     }
   });
