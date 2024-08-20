@@ -42,7 +42,7 @@ async function getAudios(folder) {
   for (let element of Audios) {
 
     FileUl.innerHTML += `<li class="pointer item_lib">
-        <img class="invert music" src="Images/Audio.svg" alt="Audio Icon">
+        <img class="invert music" src="Images/Audio. " alt="Audio Icon">
         <div class="info">${element}</div>
         <img class="invert playNow" src="Images/play.svg" alt="Play Icon">
       </li>`;
@@ -210,3 +210,5 @@ async function main() {
 }
 
 main();
+
+
