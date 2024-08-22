@@ -1,6 +1,4 @@
 let currentAudio = new Audio();
-let previousAudio;
-let nextAudio;
 let currentFolder;
 let Audios;
 let previousVolume = currentAudio.volume;
@@ -42,7 +40,7 @@ async function getAudios(folder) {
   for (let element of Audios) {
 
     FileUl.innerHTML += `<li class="pointer item_lib">
-        <img class="invert music" src="Images/Audio. " alt="Audio Icon">
+        <img class="invert music" src="Images/Audio.svg " alt="Audio Icon">
         <div class="info">${element}</div>
         <img class="invert playNow" src="Images/play.svg" alt="Play Icon">
       </li>`;
@@ -89,7 +87,7 @@ async function DisplayAlbums() {
   let array = Array.from(anchors);
   for (let i = 0; i < array.length; i++) {
     const e = array[i];
-    if (e.href.includes("/AudioFiles")) {
+    if (e.href.includes("/AudioFiles") && !e.href.includes(".htaccess")) {
       let folder = e.href.split("/").slice(-2)[0];
       let a = await fetch(
         `/AudioFiles/${folder}/info.json`
@@ -166,18 +164,17 @@ async function main() {
     let index = Audios.indexOf(currentAudioFileName);
     if (index > 0) {
       currentAudio.src = `/${currentFolder}/` + Audios[index - 1];
+      document.querySelector(".audioName").innerHTML = `<span>${Audios[index - 1]}</span>`;
       currentAudio.play();
     }
   });
 
   document.querySelector("#Next").addEventListener("click", () => {
-    let currentAudioFileName = currentAudio.src
-      .split("/")
-      .pop()
-      .replaceAll("%20", " ");
+    let currentAudioFileName = currentAudio.src.split("/").pop().replaceAll("%20", " ");
     let index = Audios.indexOf(currentAudioFileName);
     if (index < Audios.length - 1) {
       currentAudio.src = `/${currentFolder}/` + Audios[index + 1];
+      document.querySelector(".audioName").innerHTML = `<span>${Audios[index + 1]}</span>`;
       currentAudio.play();
     }
   });
@@ -195,7 +192,7 @@ async function main() {
       }
     });
     // Adding an event listener to mute the volume
-    document.querySelector(".volume_btn").addEventListener('click',()=>{
+    document.querySelector(".volume_btn").addEventListener('click',()=> {
      if(currentAudio.volume != 0){
       previousVolume = currentAudio.volume;
       currentAudio.volume = 0;
@@ -205,9 +202,7 @@ async function main() {
       currentAudio.volume = previousVolume;
       document.querySelector(".volume_btn").src = "Images/volume.svg";
      }
-
-    })
+    });
 }
 
 main();
-
