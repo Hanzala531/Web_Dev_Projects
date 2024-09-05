@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
 
 * {
   margin: 0;
   padding: 0;
+  font-style:   url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  ;
 }
 
 :root{
@@ -33,6 +37,7 @@ body {
 
 .home {
   padding: 20px, 40px;
+  border-radius: 13px;
 }
 
 .home ul {
@@ -71,6 +76,7 @@ body {
   position: relative;
   padding: 20px, 40px;
   font-size: small;
+  border-radius: 13px;
 }
 
 .heading {
@@ -127,6 +133,7 @@ body {
   max-height: 100vh;
   overflow-y: scroll;
   position: relative;
+  border-radius: 20px;
 }
 
 .right-part::-webkit-scrollbar {
@@ -143,6 +150,7 @@ body {
   align-items: center;
   background-color: rgb(19, 19, 19);
   padding: 15px;
+  border-radius: 20px;
 }
 
 .header > * {
@@ -152,6 +160,7 @@ body {
   max-height: 69vh;
   overflow-y: scroll;
   padding-left: 50px;
+  /* border-radius: 20px; */
 }
 .contents::-webkit-scrollbar {
   display: none;
@@ -194,11 +203,14 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   background-color: #181818;
   padding: 4px;
   position: relative;
   width: 200px; /* Base width for larger screens */
   height:min-content ;
+  border-radius: 20px;
 }
 
 .card > span{
@@ -209,6 +221,7 @@ body {
   width: 100%;
   min-height: 120px;
   max-height:120px;
+  border-radius: 20px;
 }
 
 .card > * {
@@ -315,15 +328,17 @@ body {
  gap: 15px;
   
 }
-/* .item_lib{
+.item_lib{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
   border: 2px solid #ffffff;
-  /* margin: 4px 10px; */
-  /* padding: 5px; */
-/* }  */
+  margin: 4px 10px;
+  padding: 5px;
+  border-radius: 10px;
+  /* margin-bottom: 3px; */
+ } 
 
 /* Media query for smaller screens */
 @media (max-width: 1200px) {

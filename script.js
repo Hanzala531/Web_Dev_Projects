@@ -87,7 +87,7 @@ async function DisplayAlbums() {
   let array = Array.from(anchors);
   for (let i = 0; i < array.length; i++) {
     const e = array[i];
-    if (e.href.includes("/AudioFiles") && !e.href.includes(".htaccess")) {
+    if (e.href.includes("/AudioFiles") && !e.href.includes(".htaccess")){
       let folder = e.href.split("/").slice(-2)[0];
       let a = await fetch(
         `/AudioFiles/${folder}/info.json`
